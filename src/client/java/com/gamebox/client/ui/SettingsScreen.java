@@ -60,7 +60,7 @@ public class SettingsScreen extends Screen {
 
         this.addRenderableWidget(new GameBoxButton(buttonX, y, BUTTON_WIDTH, BUTTON_HEIGHT,
                 Component.translatable("gamebox.settings.open_controls"),
-                () -> this.minecraft.setScreen(new ControlsScreen(this, Minecraft.getInstance().options))));
+                () -> this.minecraft.gui.setScreen(new ControlsScreen(this, Minecraft.getInstance().options))));
         y += BUTTON_SPACING + 8;
 
         this.addRenderableWidget(new GameBoxButton(buttonX, y, BUTTON_WIDTH, BUTTON_HEIGHT,
@@ -108,7 +108,7 @@ public class SettingsScreen extends Screen {
 
     @Override
     public void onClose() {
-        this.minecraft.setScreen(parent);
+        this.minecraft.gui.setScreen(parent);
     }
 
     @Override

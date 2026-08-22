@@ -90,7 +90,7 @@ public class Game2048Screen extends Screen {
         this.addRenderableWidget(new GameBoxButton(
                 startX, buttonY, 90, 20,
                 Component.translatable("gamebox.common.how_to_play"),
-                () -> this.minecraft.setScreen(new HowToPlayScreen(this, this.getTitle(), getInstructions()))
+                () -> this.minecraft.gui.setScreen(new HowToPlayScreen(this, this.getTitle(), getInstructions()))
         ));
 
         this.addRenderableWidget(new GameBoxButton(
@@ -190,7 +190,7 @@ public class Game2048Screen extends Screen {
 
     @Override
     public void onClose() {
-        this.minecraft.setScreen(parentScreen);
+        this.minecraft.gui.setScreen(parentScreen);
     }
 
     @Override

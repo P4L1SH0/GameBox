@@ -73,7 +73,7 @@ public class MinesweeperScreen extends Screen {
         this.elapsedTicks = 0;
         this.recordSaved = false;
         this.mineItemStack = new ItemStack(Items.TNT);
-        this.flagItemStack = new ItemStack(Items.RED_BANNER);
+        this.flagItemStack = new ItemStack(Items.BANNER.red());
 
         leaderboardPanel.refresh(MinesweeperGame.ID, difficulty.name());
 
@@ -185,7 +185,7 @@ public class MinesweeperScreen extends Screen {
 
     @Override
     public void onClose() {
-        this.minecraft.setScreen(parentScreen);
+        this.minecraft.gui.setScreen(parentScreen);
     }
 
     @Override

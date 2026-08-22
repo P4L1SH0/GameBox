@@ -64,14 +64,14 @@ public class DifficultySelectScreen extends Screen {
         for (Difficulty difficulty : difficulties) {
             this.addRenderableWidget(new GameBoxButton(buttonX, y, BUTTON_WIDTH, BUTTON_HEIGHT,
                     difficulty.getDisplayName(),
-                    () -> this.minecraft.setScreen(screenFactory.apply(this, difficulty))));
+                    () -> this.minecraft.gui.setScreen(screenFactory.apply(this, difficulty))));
             y += BUTTON_SPACING;
         }
 
         y += 8;
         this.addRenderableWidget(new GameBoxButton(buttonX, y, BUTTON_WIDTH, BUTTON_HEIGHT,
                 Component.translatable("gamebox.common.how_to_play"),
-                () -> this.minecraft.setScreen(new HowToPlayScreen(this, gameTitle, instructions))));
+                () -> this.minecraft.gui.setScreen(new HowToPlayScreen(this, gameTitle, instructions))));
         y += BUTTON_SPACING;
 
         this.addRenderableWidget(new GameBoxButton(buttonX, y, BUTTON_WIDTH, BUTTON_HEIGHT,
@@ -80,7 +80,7 @@ public class DifficultySelectScreen extends Screen {
 
     @Override
     public void onClose() {
-        this.minecraft.setScreen(parent);
+        this.minecraft.gui.setScreen(parent);
     }
 
     @Override

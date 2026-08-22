@@ -53,17 +53,17 @@ public class MainMenuScreen extends Screen {
             if (!hasRightGame) {
                 this.addRenderableWidget(new GameBoxButton(centeredX, y, FULL_BUTTON_WIDTH, BUTTON_HEIGHT,
                         leftGame.getMetadata().displayName(),
-                        () -> this.minecraft.setScreen(leftGame.createScreen(this)),
+                        () -> this.minecraft.gui.setScreen(leftGame.createScreen(this)),
                         MiniGameIcons.forGameId(leftGame.getMetadata().id())));
             } else {
                 MiniGame rightGame = games.get(i + 1);
                 this.addRenderableWidget(new GameBoxButton(leftColumnX, y, COLUMN_BUTTON_WIDTH, BUTTON_HEIGHT,
                         leftGame.getMetadata().displayName(),
-                        () -> this.minecraft.setScreen(leftGame.createScreen(this)),
+                        () -> this.minecraft.gui.setScreen(leftGame.createScreen(this)),
                         MiniGameIcons.forGameId(leftGame.getMetadata().id())));
                 this.addRenderableWidget(new GameBoxButton(rightColumnX, y, COLUMN_BUTTON_WIDTH, BUTTON_HEIGHT,
                         rightGame.getMetadata().displayName(),
-                        () -> this.minecraft.setScreen(rightGame.createScreen(this)),
+                        () -> this.minecraft.gui.setScreen(rightGame.createScreen(this)),
                         MiniGameIcons.forGameId(rightGame.getMetadata().id())));
             }
             y += BUTTON_SPACING;
@@ -74,15 +74,15 @@ public class MainMenuScreen extends Screen {
 
         this.addRenderableWidget(new GameBoxButton(leftColumnX, y, COLUMN_BUTTON_WIDTH, BUTTON_HEIGHT,
                 Component.translatable("gamebox.menu.records"),
-                () -> this.minecraft.setScreen(new RecordsScreen(this))));
+                () -> this.minecraft.gui.setScreen(new RecordsScreen(this))));
         this.addRenderableWidget(new GameBoxButton(rightColumnX, y, COLUMN_BUTTON_WIDTH, BUTTON_HEIGHT,
                 Component.translatable("gamebox.menu.settings"),
-                () -> this.minecraft.setScreen(new SettingsScreen(this))));
+                () -> this.minecraft.gui.setScreen(new SettingsScreen(this))));
         y += BUTTON_SPACING;
 
         this.addRenderableWidget(new GameBoxButton(leftColumnX, y, COLUMN_BUTTON_WIDTH, BUTTON_HEIGHT,
                 Component.translatable("gamebox.menu.statistics"),
-                () -> this.minecraft.setScreen(new StatisticsScreen(this))));
+                () -> this.minecraft.gui.setScreen(new StatisticsScreen(this))));
         this.addRenderableWidget(new GameBoxButton(rightColumnX, y, COLUMN_BUTTON_WIDTH, BUTTON_HEIGHT,
                 Component.translatable("gamebox.menu.exit"), this::onClose));
     }

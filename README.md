@@ -13,6 +13,7 @@ de servidor opcional para competir con puntuaciones.
 - [Requisitos](#requisitos)
 - [Instalación (jugadores)](#instalación-jugadores)
 - [Clasificación de servidor](#clasificación-de-servidor)
+- [Contribuir](#contribuir)
 - [Licencia](#licencia)
 
 ## Minijuegos
@@ -46,19 +47,24 @@ de servidor opcional para competir con puntuaciones.
 
 ## Requisitos
 
-- Minecraft **26.1.2**
-- [Fabric Loader](https://fabricmc.net/use/) **0.19.3** o superior
-- [Fabric API](https://modrinth.com/mod/fabric-api) **0.155.2+26.1.2** o superior
+- [Fabric Loader](https://fabricmc.net/use/)
+- [Fabric API](https://modrinth.com/mod/fabric-api)
 - Java 25 o superior
+
+> La versión exacta de Minecraft y de Fabric API necesarias dependen del
+> archivo que descargues — consulta la sección
+> [Releases](../../releases) de este repositorio: cada release indica en
+> su descripción para qué versión de Minecraft fue compilado.
 
 ## Instalación (jugadores)
 
-1. Instala [Fabric Loader](https://fabricmc.net/use/) para Minecraft 26.1.2.
-2. Descarga la última versión de **Fabric API** desde
-   [Modrinth](https://modrinth.com/mod/fabric-api) o
+1. Instala [Fabric Loader](https://fabricmc.net/use/) para tu versión de
+   Minecraft.
+2. Descarga la versión de **Fabric API** compatible con tu versión de
+   Minecraft desde [Modrinth](https://modrinth.com/mod/fabric-api) o
    [CurseForge](https://www.curseforge.com/minecraft/mc-mods/fabric-api).
-3. Descarga el `.jar` de GameBox desde la sección
-   [Releases](../../releases) de este repositorio.
+3. Descarga el `.jar` de GameBox correspondiente a tu versión de Minecraft
+   desde la sección [Releases](../../releases) de este repositorio.
 4. Copia ambos archivos `.jar` (Fabric API y GameBox) a la carpeta `mods` de
    tu instalación de Minecraft.
 5. Inicia el juego con el perfil de Fabric. Pulsa **G** en cualquier momento
@@ -76,8 +82,20 @@ GameBox incluye un sistema opcional de clasificación compartida:
   del servidor para esa dificultad, incluyendo la skin de los jugadores que
   estén conectados en ese momento.
 - Para que un servidor ofrezca esta función, su operador solo necesita
-  instalar el mismo `.jar` de GameBox en la carpeta `mods` del servidor —
-  no requiere ninguna configuración adicional.
+  instalar el mismo `.jar` de GameBox (para su versión de Minecraft) en la
+  carpeta `mods` del servidor — no requiere ninguna configuración adicional.
+
+
+Cada minijuego sigue el mismo patrón: una clase de **lógica pura** (sin
+dependencias de Minecraft, fácil de testear de forma aislada), una clase de
+**pantalla** que dibuja y gestiona la entrada, y una clase de **récord**
+serializable con Gson.
+
+## Contribuir
+
+Las incidencias y las pull requests son bienvenidas. Si añades un minijuego
+nuevo, intenta seguir el mismo patrón de separación lógica/pantalla que el
+resto del proyecto.
 
 ## Licencia
 

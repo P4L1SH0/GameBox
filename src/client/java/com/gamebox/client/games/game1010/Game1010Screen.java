@@ -105,7 +105,7 @@ public class Game1010Screen extends Screen {
 
         this.addRenderableWidget(new GameBoxButton(buttonStartX, buttonY, 90, BUTTON_ROW_HEIGHT,
                 Component.translatable("gamebox.common.how_to_play"),
-                () -> this.minecraft.setScreen(new HowToPlayScreen(this, this.getTitle(), getInstructions()))));
+                () -> this.minecraft.gui.setScreen(new HowToPlayScreen(this, this.getTitle(), getInstructions()))));
 
         this.addRenderableWidget(new GameBoxButton(buttonStartX + 90 + BUTTON_GAP, buttonY, 90, BUTTON_ROW_HEIGHT,
                 Component.translatable("gamebox.games.game1010.restart"), this::restart));
@@ -228,7 +228,7 @@ public class Game1010Screen extends Screen {
 
     @Override
     public void onClose() {
-        this.minecraft.setScreen(parentScreen);
+        this.minecraft.gui.setScreen(parentScreen);
     }
 
     @Override

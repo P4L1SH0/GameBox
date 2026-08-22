@@ -61,8 +61,10 @@ public class GameBoxClient implements ClientModInitializer {
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (openMenuKey.consumeClick()) {
-                if (client.screen == null) {
-                    client.setScreen(new MainMenuScreen());
+                // In 26.2, both "screen" and setScreen(...) moved from
+                // Minecraft directly to Minecraft.gui.
+                if (client.gui.screen() == null) {
+                    client.gui.setScreen(new MainMenuScreen());
                 }
             }
         });

@@ -86,7 +86,7 @@ public class FlappyBirdScreen extends Screen {
 
         this.addRenderableWidget(new GameBoxButton(buttonStartX, buttonY, 90, BUTTON_ROW_HEIGHT,
                 Component.translatable("gamebox.common.how_to_play"),
-                () -> this.minecraft.setScreen(new HowToPlayScreen(this, this.getTitle(), getInstructions()))));
+                () -> this.minecraft.gui.setScreen(new HowToPlayScreen(this, this.getTitle(), getInstructions()))));
 
         this.addRenderableWidget(new GameBoxButton(buttonStartX + 90 + BUTTON_GAP, buttonY, 90, BUTTON_ROW_HEIGHT,
                 Component.translatable("gamebox.common.back"), this::onClose));
@@ -180,7 +180,7 @@ public class FlappyBirdScreen extends Screen {
 
     @Override
     public void onClose() {
-        this.minecraft.setScreen(parentScreen);
+        this.minecraft.gui.setScreen(parentScreen);
     }
 
     private int worldToScreenX(float worldX) {

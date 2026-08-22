@@ -224,7 +224,7 @@ public class SudokuScreen extends Screen {
 
     @Override
     public void onClose() {
-        this.minecraft.setScreen(parentScreen);
+        this.minecraft.gui.setScreen(parentScreen);
     }
 
     @Override

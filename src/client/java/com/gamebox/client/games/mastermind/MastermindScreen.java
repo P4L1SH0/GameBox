@@ -117,7 +117,7 @@ public class MastermindScreen extends Screen {
 
         this.addRenderableWidget(new GameBoxButton(buttonStartX, buttonY, 90, BUTTON_ROW_HEIGHT,
                 Component.translatable("gamebox.common.how_to_play"),
-                () -> this.minecraft.setScreen(new HowToPlayScreen(this, this.getTitle(), getInstructions()))));
+                () -> this.minecraft.gui.setScreen(new HowToPlayScreen(this, this.getTitle(), getInstructions()))));
 
         this.submitButton = new GameBoxButton(buttonStartX + 90 + BUTTON_GAP, buttonY, 90, BUTTON_ROW_HEIGHT,
                 Component.translatable("gamebox.games.mastermind.submit"), this::submitGuess);
@@ -278,7 +278,7 @@ public class MastermindScreen extends Screen {
 
     @Override
     public void onClose() {
-        this.minecraft.setScreen(parentScreen);
+        this.minecraft.gui.setScreen(parentScreen);
     }
 
     @Override
