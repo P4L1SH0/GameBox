@@ -1,0 +1,20 @@
+<svg width="680" height="200" viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Logo de GameBox</title>
+  <desc>Un icono cuadrado oscuro con una cruz dorada estilo mando de videojuegos y cuatro puntos de colores en las esquinas, junto al texto "GameBox" en blanco y dorado, con el subtitulo "Minecraft minigame hub".</desc>
+
+  <rect x="40" y="20" width="160" height="160" rx="20" fill="#262b36" stroke="#3f4757" stroke-width="2"/>
+
+  <circle cx="56" cy="36" r="7" fill="#E5484D"/>
+  <circle cx="184" cy="36" r="7" fill="#2DD4BF"/>
+  <circle cx="56" cy="164" r="7" fill="#A78BFA"/>
+  <circle cx="184" cy="164" r="7" fill="#F5A623"/>
+
+  <rect x="106" y="58" width="28" height="28" rx="4" fill="#FFD86B"/>
+  <rect x="106" y="114" width="28" height="28" rx="4" fill="#FFD86B"/>
+  <rect x="78" y="86" width="28" height="28" rx="4" fill="#FFD86B"/>
+  <rect x="134" y="86" width="28" height="28" rx="4" fill="#FFD86B"/>
+  <rect x="106" y="86" width="28" height="28" rx="4" fill="#FFD86B"/>
+
+  <text x="240" y="108" font-family="Arial, sans-serif" font-size="54" font-weight="700"><tspan fill="#F5F5F5">Game</tspan><tspan fill="#FFD86B">Box</tspan></text>
+  <text x="240" y="136" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#9AA3B2">Minecraft minigame hub</text>
+</svg>
