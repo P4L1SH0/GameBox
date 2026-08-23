@@ -1,103 +1,101 @@
 ![GameBox](logo.svg)
 # GameBox
 
-Un hub de minijuegos dentro de Minecraft. Snake, Apaga la Luz, Buscaminas,
-Sudoku, Memory, 2048, Simon, Mastermind, 10x10 y Flappy Bird — todo en un
-mod de Fabric, con récords locales, tema claro/oscuro, y una clasificación
-de servidor opcional para competir con puntuaciones.
+A mini-game hub inside Minecraft. Snake, Lights Out, Minesweeper, Sudoku,
+Memory, 2048, Simon, Mastermind, 10x10, and Flappy Bird — all in one
+Fabric mod, with local records, a light/dark theme, and an optional
+server leaderboard to compete for high scores.
 
-## Índice
+## Table of contents
 
-- [Minijuegos](#minijuegos)
-- [Características](#características)
-- [Requisitos](#requisitos)
-- [Instalación (jugadores)](#instalación-jugadores)
-- [Clasificación de servidor](#clasificación-de-servidor)
-- [Contribuir](#contribuir)
-- [Licencia](#licencia)
+- [Mini-games](#mini-games)
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation (players)](#installation-players)
+- [Server leaderboard](#server-leaderboard)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Minijuegos
+## Mini-games
 
-| Juego | Dificultades | Descripción |
+| Game | Difficulties | Description |
 |---|---|---|
-| Snake | Sí | El clásico juego de la serpiente. |
-| Apaga la Luz | Sí | Apaga todas las luces del tablero. |
-| Buscaminas | Sí | Despeja el tablero sin detonar ninguna mina. |
-| Sudoku | Sí | Rellena la cuadrícula 9x9 sin repetir números. |
-| Memory | Sí | Encuentra todas las parejas de cartas. |
-| 2048 | No | Combina fichas hasta llegar a 2048. |
-| Simon | Sí | Repite la secuencia de colores. |
-| Mastermind | Sí | Adivina el código secreto de colores. |
-| 10x10 | No | Encaja piezas en una cuadrícula, tipo Tetris sin caída. |
-| Flappy Bird | No | Vuela entre los huecos de las tuberías. |
+| Snake | Yes | The classic snake game. |
+| Lights Out | Yes | Turn off every light on the board. |
+| Minesweeper | Yes | Clear the board without detonating a mine. |
+| Sudoku | Yes | Fill the 9x9 grid without repeating numbers. |
+| Memory | Yes | Find every matching pair of cards. |
+| 2048 | No | Combine tiles to reach 2048. |
+| Simon | Yes | Repeat the color sequence. |
+| Mastermind | Yes | Guess the secret color code. |
+| 10x10 | No | Fit blocks into a grid, Tetris-style without falling pieces. |
+| Flappy Bird | No | Fly through the gaps between the pipes. |
 
-## Características
+## Features
 
-- **10 minijuegos** con lógica de juego separada de la interfaz, para que
-  cada uno sea fácil de mantener y extender.
-- **Récords locales** por jugador y por dificultad, con verificación de
-  integridad del archivo de guardado.
-- **Estadísticas agregadas**: total de partidas jugadas y tu juego favorito.
-- **Tema claro/oscuro** configurable.
-- **Ayuda in-game** ("Cómo jugar") para cada minijuego.
-- **Clasificación de servidor opcional** (ver más abajo).
-- Mod **exclusivamente de cliente** por defecto: no necesitas instalarlo en
-  ningún servidor para jugar, y no rompe la compatibilidad con servidores
-  vanilla o con otros mods.
+- **10 mini-games** with game logic kept separate from the UI, so each one
+  stays easy to maintain and extend.
+- **Local records** per player and per difficulty, with integrity
+  verification on the save file.
+- **Aggregate statistics**: total games played and your favorite game.
+- Configurable **light/dark theme**.
+- **In-game help** ("How to Play") for every mini-game.
+- **Optional server leaderboard** (see below).
+- **Client-side only** by default: you don't need to install it on any
+  server to play, and it doesn't break compatibility with vanilla servers
+  or other mods.
 
-## Requisitos
+## Requirements
 
 - [Fabric Loader](https://fabricmc.net/use/)
 - [Fabric API](https://modrinth.com/mod/fabric-api)
-- Java 25 o superior
+- Java 25 or later
 
-> La versión exacta de Minecraft y de Fabric API necesarias dependen del
-> archivo que descargues — consulta la sección
-> [Releases](../../releases) de este repositorio: cada release indica en
-> su descripción para qué versión de Minecraft fue compilado.
+> The exact Minecraft and Fabric API versions required depend on which
+> file you download — check the [Releases](../../releases) section of
+> this repository: each release states in its description which
+> Minecraft version it was built for.
 
-## Instalación (jugadores)
+## Installation (players)
 
-1. Instala [Fabric Loader](https://fabricmc.net/use/) para tu versión de
-   Minecraft.
-2. Descarga la versión de **Fabric API** compatible con tu versión de
-   Minecraft desde [Modrinth](https://modrinth.com/mod/fabric-api) o
+1. Install [Fabric Loader](https://fabricmc.net/use/) for your Minecraft
+   version.
+2. Download the **Fabric API** version compatible with your Minecraft
+   version from [Modrinth](https://modrinth.com/mod/fabric-api) or
    [CurseForge](https://www.curseforge.com/minecraft/mc-mods/fabric-api).
-3. Descarga el `.jar` de GameBox correspondiente a tu versión de Minecraft
-   desde la sección [Releases](../../releases) de este repositorio.
-4. Copia ambos archivos `.jar` (Fabric API y GameBox) a la carpeta `mods` de
-   tu instalación de Minecraft.
-5. Inicia el juego con el perfil de Fabric. Pulsa **G** en cualquier momento
-   dentro de una partida para abrir el menú de GameBox.
+3. Download the GameBox `.jar` matching your Minecraft version from this
+   repository's [Releases](../../releases) section.
+4. Copy both `.jar` files (Fabric API and GameBox) into your Minecraft
+   installation's `mods` folder.
+5. Launch the game with the Fabric profile. Press **G** at any time in a
+   world to open the GameBox menu.
 
-## Clasificación de servidor
+## Server leaderboard
 
-GameBox incluye un sistema opcional de clasificación compartida:
+GameBox includes an optional shared leaderboard system:
 
-- Si te conectas a un servidor **que no tiene GameBox instalado**, el mod
-  funciona exactamente igual que en modo un jugador: solo con récords
-  locales, sin ningún cambio de comportamiento.
-- Si te conectas a un servidor **que sí tiene GameBox instalado**, cada
-  minijuego muestra automáticamente un panel con el Top 5 de puntuaciones
-  del servidor para esa dificultad, incluyendo la skin de los jugadores que
-  estén conectados en ese momento.
-- Para que un servidor ofrezca esta función, su operador solo necesita
-  instalar el mismo `.jar` de GameBox (para su versión de Minecraft) en la
-  carpeta `mods` del servidor — no requiere ninguna configuración adicional.
+- If you connect to a server **that doesn't have GameBox installed**, the
+  mod works exactly like it does in singleplayer: local records only, no
+  change in behavior.
+- If you connect to a server **that does have GameBox installed**, every
+  mini-game automatically shows a panel with the server's Top 5 scores for
+  that difficulty, including the skin of any players currently online.
+- For a server to offer this feature, its operator only needs to install
+  the same GameBox `.jar` (matching their Minecraft version) in the
+  server's `mods` folder — no additional configuration required.
 
+Each mini-game follows the same pattern: a **pure logic** class (with no
+Minecraft dependencies, easy to test in isolation), a **screen** class
+that handles drawing and input, and a **record** class serializable with
+Gson.
 
-Cada minijuego sigue el mismo patrón: una clase de **lógica pura** (sin
-dependencias de Minecraft, fácil de testear de forma aislada), una clase de
-**pantalla** que dibuja y gestiona la entrada, y una clase de **récord**
-serializable con Gson.
+## Contributing
 
-## Contribuir
+Issues and pull requests are welcome. If you add a new mini-game, try to
+follow the same logic/screen separation pattern used throughout the rest
+of the project.
 
-Las incidencias y las pull requests son bienvenidas. Si añades un minijuego
-nuevo, intenta seguir el mismo patrón de separación lógica/pantalla que el
-resto del proyecto.
+## License
 
-## Licencia
-
-Este proyecto está bajo la licencia MIT — consulta el archivo
-[LICENSE](LICENSE) para más detalles.
+This project is licensed under the MIT License — see the
+[LICENSE](LICENSE) file for details.
