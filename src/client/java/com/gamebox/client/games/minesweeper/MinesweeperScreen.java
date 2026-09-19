@@ -10,6 +10,7 @@ import com.gamebox.client.ui.GameBoxButton;
 import com.gamebox.client.ui.HudBar;
 import com.gamebox.client.ui.ItemIconRenderer;
 import com.gamebox.client.ui.ServerLeaderboardPanel;
+import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.input.MouseButtonEvent;
@@ -17,7 +18,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import org.lwjgl.glfw.GLFW;
 
 public class MinesweeperScreen extends Screen {
 
@@ -164,10 +164,10 @@ public class MinesweeperScreen extends Screen {
             return false;
         }
 
-        if (event.button() == GLFW.GLFW_MOUSE_BUTTON_RIGHT) {
+        if (event.button() == InputConstants.MOUSE_BUTTON_RIGHT) {
             logic.toggleFlag(cellX, cellY);
             GameBoxSounds.play(SoundEvents.UI_BUTTON_CLICK, 1.6F);
-        } else if (event.button() == GLFW.GLFW_MOUSE_BUTTON_LEFT) {
+        } else if (event.button() == InputConstants.MOUSE_BUTTON_LEFT) {
             if (logic.isRevealed(cellX, cellY)) {
                 boolean revealedSomething = logic.chord(cellX, cellY);
                 if (revealedSomething && !logic.isFinished()) {

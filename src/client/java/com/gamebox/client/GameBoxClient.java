@@ -53,7 +53,7 @@ public class GameBoxClient implements ClientModInitializer {
         openMenuKey = KeyMappingHelper.registerKeyMapping(
                 new KeyMapping(
                         "key.gamebox.open_menu",
-                        InputConstants.Type.KEYSYM,
+                        InputConstants.Type.KEYBOARD,
                         InputConstants.KEY_G,
                         CATEGORY
                 )
@@ -61,8 +61,6 @@ public class GameBoxClient implements ClientModInitializer {
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (openMenuKey.consumeClick()) {
-                // In 26.2, both "screen" and setScreen(...) moved from
-                // Minecraft directly to Minecraft.gui.
                 if (client.gui.screen() == null) {
                     client.gui.setScreen(new MainMenuScreen());
                 }

@@ -16,7 +16,8 @@ import net.minecraft.client.input.KeyEvent;
 import net.minecraft.client.input.MouseButtonEvent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
-import org.lwjgl.glfw.GLFW;
+
+import java.util.OptionalInt;
 
 public class SudokuScreen extends Screen {
 
@@ -212,12 +213,18 @@ public class SudokuScreen extends Screen {
         return super.keyPressed(event);
     }
 
+    /**
+     * Translates a raw key code (top-row number or numpad digit) into the
+     * 1-9 digit it represents. InputConstants.Key.getNumericKeyValue()
+     * already maps both ranges (top-row 1-9/0 and numpad 1-9/0) to a
+     * single 0-9 value, including the top-row/numpad "0" cases we don't
+     * want here - so we still exclude a resulting 0, since Sudoku digits
+     * only run 1-9.
+     */
     private int digitFromKey(int key) {
-        if (key >= InputConstants.KEY_1 && key <= InputConstants.KEY_9) {
-            return key - InputConstants.KEY_1 + 1;
-        }
-        if (key >= GLFW.GLFW_KEY_KP_1 && key <= GLFW.GLFW_KEY_KP_9) {
-            return key - GLFW.GLFW_KEY_KP_1 + 1;
+        OptionalInt numericValue = InputConstants.getKey(new KeyEvent(key, 0, 0)).getNumericKeyValue();
+        if (numericValue.isPresent() && numericValue.getAsInt() != 0) {
+            return numericValue.getAsInt();
         }
         return -1;
     }
